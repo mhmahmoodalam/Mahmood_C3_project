@@ -60,7 +60,8 @@ public class RestaurantTest {
   }
 
   @Test
-  public void adding_item_to_cart_should_return_the_total_order_value() {
+  public void adding_item_to_cart_should_return_the_total_order_value()
+      throws itemNotFoundException {
     restaurant.addToMenu("Sizzling brownie", 319);
     List<String> orderItems = new ArrayList<>();
     orderItems.add("Sweet corn soup");
@@ -69,7 +70,8 @@ public class RestaurantTest {
   }
 
   @Test
-  public void when_no_item_in_cart_should_return_the_total_order_value_0() {
+  public void when_no_item_in_cart_should_return_the_total_order_value_0()
+      throws itemNotFoundException {
     List<String> orderItems = new ArrayList<>();
     assertEquals(restaurant.getOrderValue(orderItems), 0);
   }
